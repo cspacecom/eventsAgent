@@ -1,0 +1,6 @@
+NVDA, NVIDIA
+AAPL, Apple
+TSLA, Tesla
+MSFT, Microsoft
+GOOGL, Google
+AMZN, Amazon
