@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
 "scripts": {
-  "build": "echo 'skip build'",
-  "start": "npx ts-node -r dotenv/config src/index.ts",
+  "build": "npx tsc",
+  "start": "node dist/index.js",
   "dev": "npx ts-node -r dotenv/config src/index.ts"
 },
   "keywords": [],
