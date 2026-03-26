@@ -1,10 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { Stock, NewsItem, RiskReport } from "./types";
 
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY, // 从环境变量读取，不要硬编码
-});
-
 // ─────────────────────────────────────────
 // System Prompt：告诉 Claude 它的角色和输出格式
 // 这是整个 Agent 最核心的部分，可以持续优化
@@ -39,6 +35,10 @@ export async function analyzeHoldings(
   stock: Stock,
   news: NewsItem[]
 ): Promise<RiskReport> {
+  const client = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY,
+  });
+
   // 把新闻列表格式化成文本喂给 Claude
   const newsText = news
     .map(
