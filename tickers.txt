@@ -1,6 +1,12 @@
-NVDA, NVIDIA
-AAPL, Apple
 TSLA, Tesla
+UNH, United Health
+AXTI, ETF
+MU, Macro
+JEPI, ETF
+MCD, MacDonald
 MSFT, Microsoft
-GOOGL, Google
-AMZN, Amazon
+TSM, Taiwan Semi
+SNDK, SNDK
+HD, Home Depot
+AVGO, Semi Cond
+goog, Google
