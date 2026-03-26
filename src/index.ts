@@ -88,9 +88,11 @@ async function runScan() {
 }
 
 async function main() {
+  // 调试：确认环境变量是否读取到
+  console.log("🔑 ANTHROPIC_API_KEY 前10位:", process.env.ANTHROPIC_API_KEY?.substring(0, 10) ?? "未设置");
+  console.log("🔑 RESEND_API_KEY 前10位:", process.env.RESEND_API_KEY?.substring(0, 10) ?? "未设置");
+
   console.log(`🚀 股票黑天鹅监控 Agent 启动`);
-  console.log(`⏱  每 ${INTERVAL_HOURS} 小时扫描一次`);
-  console.log(`🎯 只有风险评分 ≥ ${ALERT_THRESHOLD} 才会发邮件\n`);
 
   await runScan();
 
