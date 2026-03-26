@@ -1,11 +1,12 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { Stock, NewsItem, RiskReport } from "./types";
-
+console.log("analyzer.ts KEY:", process.env.ANTHROPIC_API_KEY?.slice(0,15));
 // ─────────────────────────────────────────
 // System Prompt：告诉 Claude 它的角色和输出格式
 // 这是整个 Agent 最核心的部分，可以持续优化
 // ─────────────────────────────────────────
 const SYSTEM_PROMPT = `你是一位专业的股票风险分析师，专门识别可能影响股价的黑天鹅事件。
+
 
 黑天鹅事件分类：
 - 管理层：CEO离职/丑闻、内部腐败、高管套现
