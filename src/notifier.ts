@@ -1,14 +1,14 @@
 import { Resend } from "resend";
 import { RiskReport } from "./types";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function sendEmailAlert(reports: RiskReport[]): Promise<void> {
+  const resend = new Resend(process.env.RESEND_API_KEY ?? "");  // ← 加在这里
+
   const subject = `🚨 股票黑天鹅预警：${reports.length} 个高风险事件 - ${new Date().toLocaleDateString("zh-CN")}`;
   const html = buildEmailHtml(reports);
 
   await resend.emails.send({
-    from: "onboarding@resend.dev",   // 免费版固定用这个发件地址
+    from: "onboarding@resend.dev",
     to: process.env.EMAIL_TO!,
     subject,
     html,
@@ -16,6 +16,7 @@ export async function sendEmailAlert(reports: RiskReport[]): Promise<void> {
 
   console.log(`✅ 邮件已发送至 ${process.env.EMAIL_TO}`);
 }
+
 
 export async function sendSlackAlert(reports: RiskReport[]): Promise<void> {
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
