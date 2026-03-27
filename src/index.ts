@@ -6,7 +6,7 @@ import { fetchNewsForCompany } from "./newsFetcher";
 import { RiskReport, Stock } from "./types";
 
 const ALERT_THRESHOLD = 6;
-const INTERVAL_HOURS = 3;
+const INTERVAL_HOURS = 5;
 
 function loadTickersFromFile(): Stock[] {
   const filePath = path.join(process.cwd(), "tickers.txt");

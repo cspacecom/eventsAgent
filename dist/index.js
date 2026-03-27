@@ -39,7 +39,7 @@ const analyzer_1 = require("./analyzer");
 const notifier_1 = require("./notifier");
 const newsFetcher_1 = require("./newsFetcher");
 const ALERT_THRESHOLD = 6;
-const INTERVAL_HOURS = 3;
+const INTERVAL_HOURS = 5;
 function loadTickersFromFile() {
     const filePath = path.join(process.cwd(), "tickers.txt");
     if (!fs.existsSync(filePath)) {

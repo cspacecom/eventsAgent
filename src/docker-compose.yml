@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  events-agent:
+    build: .
+    container_name: eventsAgent
+    restart: unless-stopped
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - NEWS_API_KEY=${NEWS_API_KEY}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - EMAIL_TO=${EMAIL_TO}
